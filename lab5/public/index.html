@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <script>
+            function readId(event) {
+                event.preventDefault();
+                let element = document.querySelector("#ID");
+                fetch("/id/" + element.value)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name
+                    }
+                });
+            }
+            function readName(event) {
+                event.preventDefault();
+                let element = document.querySelector("#NAME");
+                fetch("/name/" + element.value)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((processed) => {
+                    let reporting = document.querySelector("#reportingArea");
+                    if(processed.error) {
+                        reporting.innerHTML = processed.error;
+                    } else {
+                        reporting.innerHTML = processed.name;
+                    }
+                });
+            }
+        </script>
+        <h3>ID</h3>
+        <form onSubmit="readId(event)">
+            <input id="ID" type="text">
+            <button>Submit</button>
+        </form>
+        <h3>NAME</h3>
+        <form onSubmit="readName(event)">
+            <input id="NAME" type="text">
+            <button>Submit</button>
+        </form>
+        <h3>Reporting</h3>
+        <div id="reportingArea"></div>
+    </body>
+</html>

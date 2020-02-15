@@ -5,34 +5,37 @@ const port = 80;
 const chalk = require('chalk');
 const getPokemons = require('json-pokemon/getPokemon');
 
-const pokemons = getPokemons();
-let pokeId = getPokemons.getPokemonById();
-let pokeName = getPokemons.getPokemonByName();
+let pokemons = getPokemons();
 
 App.use("/", Express.static("public"));
 
-//console.log(pokeId);
-//console.log(pokeName);
-
 App.get("/id/:id", (req, res) => {
 
-    //let pokeId = getPokemons.getPokemonById(req.params.id);
+    let result = {"error": "Not found!"};
 
-    if (pokeId == req.params.id) {
-        res.send(req.params.id);
-        console.log(chalk.green(__filename));
-    };
-    res.send("Error ID does not exist!");
-    console.log(chalk.red(__filename));
+    pokemons.forEach((value) => {
+        if(req.params.id == value.id) {
+            result = value;
+            console.log(chalk.green(__filename));
+        }
+        console.log(chalk.red(__filename));
+    });
+
+    res.json(result);
 });
 
 App.get("/name/:name", (req, res) => {
-    if (pokeName == req.params.name) {
-        res.send(req.params.name);
-        console.log(chalk.green(__filename));
-    };
-    res.send("Error Name does not exist!");
-    console.log(chalk.red(__filename));
+    let result = {"error": "Not found!"};
+
+    pokemons.forEach((value) => {
+        if(req.params.name == value.name) {
+            result = value;
+            console.log(chalk.green(__filename));
+        }
+        console.log(chalk.red(__filename));
+    });
+
+    res.json(result);
 });
 
 App.listen(port, () => {
