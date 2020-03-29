@@ -1,0 +1,37 @@
+.body {
+    text-align: center;  
+}
+.links {
+    text-decoration: none;
+    font-size:26px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:grey;
+}
+.links:hover {
+    color:rgb(97, 49, 160);;
+}
+.homelinks {
+    margin-top:30px;
+    margin-bottom:30px;
+}
+.current {
+    background-color: rgb(48, 25, 78);
+    font-size:32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(230, 230, 230);
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:33%;
+    margin-right:33%;
+}
+.report {
+    background-color: rgb(226, 226, 226);
+    font-size:32px;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(97, 49, 160);
+    margin-top:20px;
+    margin-bottom:20px;
+    margin-left:33%;
+    margin-right:33%;
+}
+
