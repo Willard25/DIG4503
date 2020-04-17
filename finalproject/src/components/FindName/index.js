@@ -1,10 +1,11 @@
 import React from 'react';
 //import './App.css';
 
-class Compa extends React.Component {
+class FindName extends React.Component {
 
   constructor(props) {
     super(props);
+    this.inputUsername = React.createRef();
     this.state = {custom: []};
   }
 
@@ -17,29 +18,25 @@ class Compa extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-        this.setState({
-            custom: result.data
-        })
-    });
+      this.setState({
+        custom: result.links.self
+      })
+    })
   }
 
   render() {
     return (
       <div className="temp">
         <div>
-          
+          <p>Enter Username</p><br />
+          <button type="submit" onSubmit={this.findName}>Find Player</button>
         </div>
         <div>{this.state.custom}</div>
       </div>
-
     );
   }
 }
 
-export default Compa;
+export default FindName;
 
-/*
-{this.state.custom.map((value, index) => <p key={index} 
-            id={value.id}
-          />)}
-*/
+//<input type="text" id="username" ref={this.inputUsername} /><br />
