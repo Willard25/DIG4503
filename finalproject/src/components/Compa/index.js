@@ -18,7 +18,7 @@ class Compa extends React.Component {
     .then((res) => res.json())
     .then((result) => {
         this.setState({
-            custom: result
+            custom: result.data
         })
     });
   }
