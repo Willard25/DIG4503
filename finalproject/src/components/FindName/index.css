@@ -1,0 +1,40 @@
+.namesearch {
+    margin: auto;
+    width: 600px;
+}
+.formtext {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    padding: 15px;
+}
+.inputform {
+    background-color: rgb(206, 206, 206) ;
+    text-align: center;
+    border: 2px solid rgb(32, 32, 32);
+    border-radius: 8px;
+    padding: 20px 50px;
+}
+.button {
+    background-color: rgb(255, 174, 0);;
+    border: 1px solid rgb(43, 43, 43);
+    color: white;
+    padding: 10px 32px;
+    text-decoration: none;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.button:hover {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(177, 121, 0);
+    color: white;
+}
+.inputbox {
+    border-radius: 6px;
+    padding: 8px 8px;
+    border: 1px solid rgb(0, 0, 0);
+    color:rgb(70, 70, 70);
+    background-color: rgb(240, 240, 240);
+
+}
