@@ -38,3 +38,8 @@
     background-color: rgb(240, 240, 240);
 
 }
+.user{
+    color: rgb(255, 174, 0);
+    font-size: 50px;
+    font-weight: bold;
+}

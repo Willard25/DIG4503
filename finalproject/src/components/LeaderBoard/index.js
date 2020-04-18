@@ -20,10 +20,10 @@ class LeaderBoard extends React.Component {
     })
     .then((res) => res.json())
     .then((result) => {
-      let test = result.included;
+      let data = result.included;
       this.setState({
-        leader: test[0].attributes,
-        second: test[0].attributes.stats
+        leader: data[0].attributes,
+        second: data[0].attributes.stats
       })
     })
   }
